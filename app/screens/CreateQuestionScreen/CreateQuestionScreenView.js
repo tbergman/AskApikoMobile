@@ -14,7 +14,7 @@ CreateQuestionScreenView.propTypes = {};
 
 CreateQuestionScreenView.navigationOptions = ({ navigation }) => ({
   title: 'Create question',
-  headerLeft: <Text onPress={() => navigation.navigate('DrawerToggle')}>Drawer</Text>,
+  headerLeft: <Text onPress={() => navigation.toggleDrawer()}>Drawer</Text>,
 });
 
 export default CreateQuestionScreenView;

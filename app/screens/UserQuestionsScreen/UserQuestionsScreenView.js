@@ -25,7 +25,7 @@ UserQuestionsScreenView.propTypes = {
 
 UserQuestionsScreenView.navigationOptions = ({ navigation }) => ({
   title: 'Home',
-  headerLeft: <Text onPress={() => navigation.navigate('DrawerToggle')}>Drawer</Text>,
+  headerLeft: <Text onPress={() => navigation.toggleDrawer()}>Drawer</Text>,
 });
 
 export default UserQuestionsScreenView;

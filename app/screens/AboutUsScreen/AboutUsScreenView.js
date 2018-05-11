@@ -14,7 +14,7 @@ AboutUsScreenView.propTypes = {};
 
 AboutUsScreenView.navigationOptions = ({ navigation }) => ({
   title: 'About us',
-  headerLeft: <Text onPress={() => navigation.navigate('DrawerToggle')}>Drawer</Text>,
+  headerLeft: <Text onPress={() => navigation.toggleDrawer()}>Drawer</Text>,
 });
 
 export default AboutUsScreenView;

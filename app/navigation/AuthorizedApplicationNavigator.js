@@ -1,4 +1,4 @@
-import { DrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation';
 
 import { screens } from './';
 import HomeNavigator from './HomeNavigator';
@@ -7,7 +7,7 @@ import CreateQuestionNavigator from './CreateQuestionNavigator';
 import ProfileNavigator from './ProfileNavigator';
 import SearchNavigator from './SearchNavigator';
 
-export default DrawerNavigator({
+export default createDrawerNavigator({
   [screens.UserQuestions]: { screen: HomeNavigator },
   [screens.Search]: { screen: SearchNavigator },
   [screens.CreateQuestion]: { screen: CreateQuestionNavigator },

@@ -20,7 +20,7 @@ SearchScreenView.propTypes = {
 
 SearchScreenView.navigationOptions = ({ navigation }) => ({
   title: 'Search',
-  headerLeft: <Text onPress={() => navigation.navigate('DrawerToggle')}>Drawer</Text>,
+  headerLeft: <Text onPress={() => navigation.toggleDrawer()}>Drawer</Text>,
 });
 
 export default SearchScreenView;
