@@ -1,5 +1,4 @@
 import { createStackNavigator } from 'react-navigation';
-
 import { screens } from './';
 import { ProfileScreen } from '../screens';
 

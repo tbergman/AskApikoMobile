@@ -1,12 +1,12 @@
-import { connect } from 'react-redux';
-import { compose, hoistStatics } from 'recompose';
-
+import { compose, hoistStatics, withHandlers } from 'recompose';
 import SignInScreenView from './SignInScreenView';
+import { screens } from '../../navigation';
 
-const mapStateToProps = state => ({});
-
-const mapDispatchToProps = {};
-
-const enhancer = compose(connect(mapStateToProps, mapDispatchToProps));
+const enhancer = compose(
+  withHandlers({
+    navigateToRestorePassword: props => () => props.navigation.navigate(screens.RestorePassword),
+    signIn: props => () => props.navigation.navigate(screens.AuthorizedApplication),
+  }),
+);
 
 export default hoistStatics(enhancer)(SignInScreenView);

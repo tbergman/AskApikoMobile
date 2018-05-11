@@ -1,20 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import T from 'prop-types';
-
-import styles from '../../styles';
+import { WebView } from 'react-native';
+import { DrawerButton } from '../../components';
+import s from './styles';
 
 const AboutUsScreenView = () => (
-  <View style={styles.container}>
-    <Text>AboutUs page</Text>
-  </View>
+  <WebView style={s.container} source={{ uri: 'https://google.com' }} />
 );
-
-AboutUsScreenView.propTypes = {};
 
 AboutUsScreenView.navigationOptions = ({ navigation }) => ({
   title: 'About us',
-  headerLeft: <Text onPress={() => navigation.toggleDrawer()}>Drawer</Text>,
+  headerLeft: <DrawerButton onPress={() => navigation.toggleDrawer()} />,
 });
 
 export default AboutUsScreenView;
