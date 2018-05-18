@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 import * as types from './types';
-import { appTypes } from '../app';
+import * as appTypes from '../app/types';
 import { mergeDeep } from '../../utils/stateHelpers';
 
 const INITIAL_STATE = {
