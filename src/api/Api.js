@@ -34,7 +34,12 @@ class Api {
   signOut() {
     return axios.post(`${this._baseUrl}/auth/sign-out`);
   }
+
+  getUserData() {
+    return axios.get(`${this._baseUrl}/users/my`);
+  }
 }
+  
 
 const api = new Api(config.api_url);
 

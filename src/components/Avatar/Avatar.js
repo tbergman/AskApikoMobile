@@ -5,12 +5,13 @@ import s from './styles';
 
 const Avatar = ({ source, profile, author }) => (
   <View style={[profile && s.profile, author && s.author]}>
+    {console.log(source)}
     <Image source={source} style={s.image} />
   </View>
 );
 
 Avatar.propTypes = {
-  source: T.string,
+  source: T.number,
   profile: T.bool,
   author: T.bool,
 };

@@ -1,11 +1,14 @@
 import { connect } from 'react-redux';
-import { compose, hoistStatics } from 'recompose';
+import { compose } from 'recompose';
+import { viewerSelectors } from '../../modules/viewer';
 import ProfileScreenView from './ProfileScreenView';
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  viewer: viewerSelectors.getViewer(state),
+});
 
 const mapDispatchToProps = {};
 
 const enhancer = compose(connect(mapStateToProps, mapDispatchToProps));
 
-export default hoistStatics(enhancer)(ProfileScreenView);
+export default enhancer(ProfileScreenView);

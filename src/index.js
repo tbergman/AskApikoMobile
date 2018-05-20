@@ -13,6 +13,7 @@ import store from './store';
 import { globalStyles } from './styles';
 import { appOperations } from './modules/app';
 import { loadAssets, loadFonts } from './utils';
+import { AlertService } from './services';
 import RootNavigatorContainer from './navigation';
 
 const isAndroid = Platform.OS === 'android';
@@ -58,11 +59,15 @@ const enhance = compose(
   withState('showLoading', 'setLoadingStatus', true),
   withHandlers({
     asyncJob: () => async () => {
-      await Promise.all([
-        loadAssets(),
-        loadFonts(),
-        store.dispatch(appOperations.initialization()),
-      ]);
+      try {
+        await Promise.all([
+          loadAssets(),
+          loadFonts(),
+          store.dispatch(appOperations.initialization()),
+        ]);
+      } catch (err) {
+        AlertService.showErrorAlert(err.message);
+      }
     },
     navigateBack: props => () => { // eslint-disable-line
       return true;

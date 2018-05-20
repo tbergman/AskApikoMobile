@@ -1,5 +1,6 @@
 import { AsyncStorage, NetInfo } from 'react-native';
-import { navigationOperations } from '../navigation/';
+import { navigationOperations } from '../navigation';
+import { viewerOperations } from '../viewer';
 import { appActions } from './';
 import Api, { SocketApi } from '../../api';
 
@@ -19,10 +20,14 @@ export const initialization = () => async (dispatch) => {
 
     if (token) {
       dispatch(initApi(token));
+
+      await dispatch(viewerOperations.getViewer());
+
       dispatch(appActions.initialized());
+
       dispatch(navigationOperations.navigateToAuthorized());
     }
   } catch (err) {
-    console.log(err);
+    throw new Error(err.message);
   }
 };
